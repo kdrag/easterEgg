@@ -1,0 +1,29 @@
+<ion-view align-title="left" hide-nav-bar="true">
+    <ion-content style="background: url(img/landing.jpg) center; background-size: cover;">
+      <!-- video autoplay loop id="video-background" muted>
+      <source src="img/SampleVideo_360x240_1mb.mp4" type="video/mp4">
+      </video -->
+        <div class="hero no-header flat">
+            <div class="content">
+                <h1>TweetMyEgg!</h1>
+            </div>
+        </div>
+        <div class="row padding removePM">
+            <div class="col"><a class="button button-full button-assertive ink" ui-sref='app.newGame'><font size='1'>Start Game</font></a></div>
+            <div class="col"><a class="button button-full button-assertive ink" ui-sref="app.joinGame"><font size='1'>Join Game</font></a></div>
+        </div>
+        &nbsp; &nbsp; &nbsp; Copyright 2016 &nbsp; &nbsp; &nbsp; John Lin &nbsp; v.0.x build x
+        <br></br>
+        <br></br>
+        <br></br>
+        <div class="button-bar social-login">
+            <button class="button button-small button-border icon-left ion-social-twitter button-calm-900" ng-click="selectTwitter()">Twitter</button>
+        </div>
+        <style>
+          .button {
+            position: relative;
+            bottom: 1px
+          }
+        </style>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,107 @@
+<ion-modal-view id="openTweet-modal.html" type="text/ng-template" class="transparent" style="width: 90%; height: 90%; top: 5%; left: 5%; right: 5%; bottom: 5%;">
+  <div class="adic-popup">
+    <ion-header-bar>
+      <h2 class="title">Your Tweet</h2>
+    </ion-header-bar>
+    <ion-content>
+      <button class="col button button-small button-energized" ng-click="closeTweet()" ><font size="1">close</font></button>
+      <div class="card">
+        {{tweet.text}}
+        <div class="row padding removePM button-bar"></div>
+        <div ng-show="home_timeline.length == 0">Loading tweets...</div>
+        <div ng-repeat="entry in home_timeline" class="list card">
+          <div class="item item-avatar">
+            <img ng-src="{{entry.user.profile_image_url}}"/>
+            <h2>{{entry.user.name}}</h2>
+            <p>{{correctTimestring(entry.created_at) | date:'medium'}}</p>
+          </div>
+          <div class="item item-body">
+            <p ng-bind-html="entry.text"></p>
+            <img ng-if="entry.extended_entities" ng-src="{{ entry.extended_entities.media[0].media_url }}" style="width: 100%;"/>
+          </div>
+        </div>
+      </div>
+    </ion-content>
+    <style>
+
+      #cancelButton {
+        position: absolute;
+        top: 80%;
+      }
+
+      .box {
+        display: block;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        margin-left: -150px;
+        min-width: 200px;
+        min-height: 200px;
+        max-width: 300px
+        max-height: 300px;
+        border-radius: 6px;
+
+
+        h1 {
+          font-family: 'Lato', sans-serif;
+          font-weight: 400;
+          font-size: 10pt;
+          padding-left: 25px;
+          padding-top: 20px;
+        }
+
+        p {
+          font-family: 'Lato', sans-serif;
+          font-weight: 300;
+          padding-left: 25px;
+          padding-right: 40px;
+          color: black;
+        }
+      }
+
+      #inputLabel {
+        margin-right: -10px;
+      }
+
+      #description {
+        margin-right: -10px;
+      }
+      #inputText {
+        position: absolute;
+        top: 75%;
+        max-width: 90%;
+
+      }
+
+
+      $gray: #ecf0f1;
+      $red: #e74c3c;
+      $green: #1abc9c;
+      $blue: #11c1f3;
+      $dark: #000;
+      $light: #fff;
+      $size: 140px;
+
+      @mixin animation($animation) {
+       -webkit-animation: $animation;
+               animation: $animation;
+      }
+
+      @mixin keyframes($name) {
+        @-webkit-keyframes #{$name} { @content; };
+        @-moz-keyframes #{$name} { @content; };
+        @-ms-keyframes #{$name} { @content; };
+        @-o-keyframes #{$name} { @content; };
+        @keyframes #{$name} { @content; };
+      }
+
+
+      .transparent {
+        opacity: 0.9;
+        }
+      </style>
+
+    </ion-content>
+  </div>
+
+</ion-modal-view>

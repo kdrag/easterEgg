@@ -1,0 +1,20 @@
+<ion-view view-title="New Game">
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <div class="hero slide-up" style="background-image: url('img/game.jpg');">
+            <h1><font color="light">Prepare your Tags</font></h1>
+            <h4><a class="white">Add NFC tags with the "+" button</a></h4>
+        </div>
+
+        <h4 class="content padding double-padding-x"><i class="icon ion-pricetags"></i>Your Tags</h4>
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+        <ion-list class="list animate-fade-slide-in-right" show-delete="shouldShowDelete" can-swipe="listCanSwipe" delegate-handle="exercise-list">
+          <ion-item collection-repeat="tag in tags" class="item item-avatar item-icon-right">
+            <h2>Tag ID</h2>
+            <h3>ID: {{tag.tagId}}</h3>
+            <ion-option-button class="button-info" ng-click="flush(tag.pactid)">Flush</ion-option-button>            <!-- i class="icon ion-chatbubble muted"></i -->
+            <ion-delete-button class="ion-minus-circled" ng-click="tag.splice($index, 1)"></ion-delete-button>
+          </ion-item>
+        <ion-list>
+
+    </ion-content>
+</ion-view>

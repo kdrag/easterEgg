@@ -1,0 +1,17 @@
+<ion-view >
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <!-- div class="hero slide-up" style="background-image: url('img/game.jpg');" -->
+        <div style="background-image: url('img/game.jpg');">
+            <h1>Search Results</h1>
+            <h4><a class="white">Find Your Participants</a></h4>
+        </div>
+        <div class="col"><a class="button button-full button-assertive ink" ng-click="s1()"><h4>Search</h4></a></div>
+        <h4 class="content padding double-padding-x"><i class="icon ion-search"></i>Your Search Results</h4>
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresh()"></ion-refresher>
+        <ion-item collection-repeat="searchValue in searchValues">
+          {{searchValue.Text}}<br></br>
+          User: {{searchValue.Screen_name}}
+        </ion-item>
+
+    </ion-content>
+</ion-view>

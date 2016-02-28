@@ -1,0 +1,26 @@
+<ion-view>
+    <ion-content ng-class="{expanded:$scope.isExpanded}">
+        <!-- div class="hero slide-up" style="background-image: url('img/game.jpg');" -->
+        <div style="background-image: url('img/game.jpg');">
+            <h1>Prepare your Tags</h1>
+            <h4><a class="white">Add NFC tags with a tap</a></h4>
+        </div>
+        <div class="col"><a class="button button-full button-assertive ink" ng-click="openRegister()"><h4>Publicize</h4></a></div>
+        <!--div>
+          <form name="maxWinner">
+              <label class="item item-input" align="left" id="inputLabel">
+                <a class="input-label">Max No. of Winners &nbsp;</a>
+                <input type="number" id="maxWin" placeholder="10" ng_model="maxWin" ng-required="true"></input>
+              </label>
+              <button class="button button-small button-calm" ng-click="maxWinSubmit(maxWin)">Set Maximum</button>
+          </form>
+        </div -->
+        <button class="button button-full button-positive" ng-click="setGame()">Set Game: {{data.hashtag}}</button>
+        <h4 class="content padding double-padding-x"><i class="icon ion-pricetags"></i>Your Tags</h4>
+        <ion-refresher pulling-text="Pull to refresh" on-refresh="doRefresher()"></ion-refresher>
+        <ion-item collection-repeat="smartTag in smartTags">
+          ID: {{smartTag}}
+        </ion-item>
+
+    </ion-content>
+</ion-view>

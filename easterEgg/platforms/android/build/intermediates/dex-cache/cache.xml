@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/JohnLin/git/hackathon/easterEgg/platforms/android/build/intermediates/exploded-aar/android/CordovaLib/unspecified/debug/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="19be447fb9b217527f7dd4993fc478569200346f">
+        <dex dex="/Users/JohnLin/git/hackathon/easterEgg/platforms/android/build/intermediates/pre-dexed/debug/CordovaLib-unspecified-debug_5dfd0425c95dd2c18810d81380eaeaeeb22de74b.jar" />
+    </item>
+
+</items>

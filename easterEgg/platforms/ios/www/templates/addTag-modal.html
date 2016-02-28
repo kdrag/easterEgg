@@ -1,0 +1,146 @@
+<ion-modal-view id="addTag-modal.html" type="text/ng-template" class="transparent" style="width: 90%; height: 90%; top: 5%; left: 5%; right: 5%; bottom: 5%;">
+  <div class="adic-popup">
+    <ion-header-bar>
+      <h2 class="title">Add NFC Tags</h2>
+    </ion-header-bar>
+    <ion-content>
+      <div class="boxGetTag">
+        Tag Id:
+      </div>
+      <h1>NFC</h1>
+      <!-- div class="content">
+        <div ng-if="!tag.id">
+            <div class="card">
+                <div class="item item-text-wrap center">
+                    Scan a tag to begin.
+                </div>
+                <button class="button button-clear button-positive" ng-click="clear()" ng-if="tag.id">Clear</button>
+            </div>
+        </div>
+        <div ng-if="tag.id">
+            <div class="card">
+                <div class="item item-text-wrap">
+                    <dl>
+                        <dt>Tag Id</dt>
+                        <dd>{{ tag.id | bytesToHexString }}</dd>
+                        <dt>Tag Type</dt>
+                        <dd>{{ tag.type }}</dd>
+                        <dt>Max Size</dt>
+                        <dd>{{ tag.maxSize }} bytes</dd>
+                        <dt>Is Writable</dt>
+                        <dd>{{ tag.isWritable }}</dd>
+                        <dt>Can Make Read Only</dt>
+                        <dd>{{ tag.canMakeReadOnly }}</dd>
+                    </dl>
+                    <div class="card" ng-repeat="record in tag.ndefMessage">
+                        <div class="item item-divider">
+                            Record {{$index + 1}} <br/>
+                        </div>
+                        <div class="item item-text-wrap">
+                            <dl>
+                                <dt>TNF</dt>
+                                <dd>{{ record.tnf | tnfToString }}</dd>
+                                <dt>Record Type</dt>
+                                <dd>{{ record.type | bytesToString }}</dd>
+                                <dt ng-if="record.id">Record Id</dt>
+                                <dd ng-if="record.id">{{ record.id | bytesToString }}</dd>
+                                <dt>Payload</dt>
+                                <dd>{{ record | decodePayload }}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+      </div -->
+
+
+
+      <div class="row padding removePM">
+        <button id="cancelButton" class="button button-full button-energized" ng-click="closeTagAdd()" ><font size="1">close</font></button>
+      </div>
+
+      <style>
+
+      #cancelButton {
+        position: absolute;
+        top: 80%;
+      }
+
+      .boxGetTag {
+        display: block;
+        position: absolute;
+        top: 10%;
+        left: 50%;
+        margin-left: -150px;
+        min-width: 200px;
+        min-height: 200px;
+        max-width: 300px
+        max-height: 300px;
+        border-radius: 6px;
+
+
+        h1 {
+          font-family: 'Lato', sans-serif;
+          font-weight: 400;
+          font-size: 10pt;
+          padding-left: 25px;
+          padding-top: 20px;
+        }
+
+        p {
+          font-family: 'Lato', sans-serif;
+          font-weight: 300;
+          padding-left: 25px;
+          padding-right: 40px;
+          color: black;
+        }
+      }
+
+      #inputLabel {
+        margin-right: -10px;
+      }
+
+      #description {
+        margin-right: -10px;
+      }
+      #inputText {
+        position: absolute;
+        top: 75%;
+        max-width: 90%;
+
+      }
+
+
+      $gray: #ecf0f1;
+      $red: #e74c3c;
+      $green: #1abc9c;
+      $blue: #11c1f3;
+      $dark: #000;
+      $light: #fff;
+      $size: 140px;
+
+      @mixin animation($animation) {
+       -webkit-animation: $animation;
+               animation: $animation;
+      }
+
+      @mixin keyframes($name) {
+        @-webkit-keyframes #{$name} { @content; };
+        @-moz-keyframes #{$name} { @content; };
+        @-ms-keyframes #{$name} { @content; };
+        @-o-keyframes #{$name} { @content; };
+        @keyframes #{$name} { @content; };
+      }
+
+
+      .transparent {
+        opacity: 0.9;
+        }
+      </style>
+
+    </ion-content>
+  </div>
+
+</ion-modal-view>
